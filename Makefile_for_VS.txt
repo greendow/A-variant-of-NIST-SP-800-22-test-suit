@@ -1,0 +1,48 @@
+PROG=rnd_test.exe
+
+OBJ=main.obj rnd_test.obj c_file_operation.obj cJSON.obj approximateEntropy.obj \
+	blockFrequency.obj cumulativeSums.obj discreteFourierTransform.obj \
+	frequency.obj linearComplexity.obj longestRunOfOnes.obj cephes.obj \
+	dfft.obj matrix.obj nonOverlappingTemplateMatchings.obj \
+	overlappingTemplateMatchings.obj randomExcursions.obj \
+	randomExcursionsVariant.obj rank.obj runs.obj serial.obj \
+	universal.obj
+
+SRC=./src/main.c ./src/rnd_test.c ./src/c_file_operation.c ./src/cJSON.c \
+    ./src/approximateEntropy/approximateEntropy.c \
+	./src/blockFrequency/blockFrequency.c \
+	./src/cumulativeSums/cumulativeSums.c \
+	./src/discreteFourierTransform/discreteFourierTransform.c \
+	./src/frequency/frequency.c \
+	./src/linearComplexity/linearComplexity.c \
+	./src/longestRunOfOnes/longestRunOfOnes.c \
+	./src/math/cephes.c \
+	./src/math/dfft.c \
+	./src/math/matrix.c \
+	./src/nonOverlappingTemplateMatchings/nonOverlappingTemplateMatchings.c \
+	./src/overlappingTemplateMatchings/overlappingTemplateMatchings.c \
+	./src/randomExcursions/randomExcursions.c \
+	./src/randomExcursionsVariant/randomExcursionsVariant.c \
+	./src/rank/rank.c \
+	./src/runs/runs.c \
+	./src/serial/serial.c \
+	./src/universal/universal.c
+	
+CFLAGS=/I "./include" /c /ZI /nologo /W3 /WX- /Od /Oy- /D "WIN32" /D "_DEBUG" \
+       /D "_CONSOLE" /Gm /EHsc /RTC1 /GS /fp:precise /Zc:forScope /Gd /analyze- \
+	   /ERRORREPORT:QUEUE
+LINKER=link.exe
+LFLAGS=/INCREMENTAL /NOLOGO "kernel32.lib" "user32.lib" "advapi32.lib" \
+       /SUBSYSTEM:CONSOLE /DYNAMICBASE /NXCOMPAT /MACHINE:X86 /ERRORREPORT:QUEUE
+ 
+$(PROG):$(OBJ)
+	$(LINKER) $(LFLAGS) $(OBJ) /OUT:$(PROG)
+$(OBJ):$(SRC)
+	$(CC) $(CFLAGS) $(SRC)
+ 
+clean:
+	del $(OBJ)
+	del $(PROG)
+	del *.idb
+	del *.pdb
+	del *.ilk

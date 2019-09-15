@@ -1,0 +1,8 @@
+{
+    "blockFrequency_BlockLen": 128,
+    "nonOverlapping_TemplateLen": 10,
+    "Overlapping_TemplateLen": 10,
+    "linearComplexity_BlockLen": 500,
+    "serial_BlockLen": 4,
+    "approximateEntropy_BlockLen": 10
+}
