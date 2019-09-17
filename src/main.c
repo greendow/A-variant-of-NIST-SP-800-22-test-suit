@@ -1,5 +1,5 @@
 /**************************************************
-* File name: rnd_test.h
+* File name: main.c
 * Author: HAN Wei
 * Author's blog: http://blog.csdn.net/henter/
 * License: MIT License (https://mit-license.org/)
@@ -17,15 +17,13 @@ int main(int argc, char *argv[])
     int fileLen, errorCode;
     char *octetStream;
 
-#if 1
     if ( argc != 2)
     {
         fprintf(stdout, "Error: Argument count is invalid!\n");
         return INVALID_PARAMETER_COUNT;
     }
-#endif
 
-	fprintf(stdout, "Randomness sample data file: %s\n\n", argv[1]);
+    fprintf(stdout, "Randomness sample data file: %s\n\n", argv[1]);
     if ( errorCode = GetFileLength(argv[1], &llfileLen) )
     {
         fprintf(stdout, "Get file length failed!\n");
