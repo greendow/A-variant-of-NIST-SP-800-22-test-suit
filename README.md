@@ -41,7 +41,13 @@
   1. The executable file *rnd_test* and the folder *templates* must be put into the same directory.  
   2. *data.sha1* is a sample data file included in folder *sts-2.1.2\data* of *NIST Statistical Test Suit*. It is in binary format.
   3. The recommended length of the input data file in NIST SP 800-22 Revision 1a is 1,000,000 bits (i.e. about 122K Bytes). If the length is too small or to big, some tests cannot be performed. And even if the length is about 1,000,000 bits, some tests cannot be performed occasionally.
----
+---  
+## Screenshot  
+  &ensp;&ensp;&ensp;&ensp;Partial results:  
+  ![ScreenShot01](https://github.com/greendow/A-variant-of-NIST-SP-800-22-test-suit/blob/master/ScreenShot_1.png)
+    
+  ![ScreenShot02](https://github.com/greendow/A-variant-of-NIST-SP-800-22-test-suit/blob/master/ScreenShot_2.png)  
+---  
 ## License  
 &ensp;&ensp;&ensp;&ensp;This work is a compound of revised NIST Statistical Test Suit (v2.1.2), cJSON (v1.7.12) and few files written by myself. It's hard to find a common license suitable for it. Maybe distinct licenses should be used for specific files.  
 
